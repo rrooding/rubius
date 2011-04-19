@@ -1,0 +1,13 @@
+development:
+    host: 127.0.0.1
+    port: 1812
+    timeout: 10
+    secret: secret_key
+    dictionary: radius-dictionary
+
+production:
+    host: 127.0.0.1
+    port: 1812
+    timeout: 10
+    secret: secret_key
+    dictionary: radius-dictionary
