@@ -1,6 +1,6 @@
 = rubius
 
-Description goes here.
+A simply ruby RADIUS authentication gem
 
 == Contributing to rubius
  
