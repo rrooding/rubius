@@ -54,3 +54,16 @@ RADIUS_DICTIONARY = [
   "",
   "ATTRIBUTE	Juniper-Local-User-Name			1	string"
 ]
+
+DICT_BROKEN_VENDOR = [
+  "# broken vendor line follows (missing id):",
+  "VENDOR Microsoft",
+  "",
+  "ATTRIBUTE Not-Included 8344 string",
+  "",
+  "# non-broken vendor:",
+  "VENDOR Apple 25",
+  "ATTRIBUTE Is-Cool 1337 integer",
+  "",
+  "VENDOR NoId id"
+]
