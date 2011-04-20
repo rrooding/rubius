@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "rubius"
   gem.homepage = "http://github.com/rahvin/rubius"
   gem.license = "MIT"
-  gem.summary = %Q{A simply ruby RADIUS authentication gem}
-  gem.description = %Q{A simply ruby RADIUS authentication gem}
+  gem.summary = %Q{A simple ruby RADIUS authentication gem}
+  gem.description = %Q{A simple ruby RADIUS authentication gem}
   gem.email = "ralph@izerion.com"
   gem.authors = ["Ralph Rooding"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
