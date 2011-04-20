@@ -45,6 +45,10 @@ And then install the gem
 
 This will create an initial 'config/rubius.yml' configuration file and a 'config/radius-dictionary' RADIUS dictionary file, it will also create an initializer in 'config/initializers/rubius.rb' to load Rubius when your application starts up.
 
+Now configure your RADIUS server properties in 'config/rubius.yml'. When you're done, you can authenticate with:
+
+	Rubius::Authenticator.authenticate('username', 'password')
+
 == Contributing to Rubius
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet

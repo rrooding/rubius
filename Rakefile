@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/rahvin/rubius"
   gem.license = "MIT"
   gem.summary = %Q{A simple ruby RADIUS authentication gem}
-  gem.description = %Q{A simple ruby RADIUS authentication gem}
+  gem.description = %Q{Rubius provides a simple interface to RADIUS authentication}
   gem.email = "ralph@izerion.com"
   gem.authors = ["Ralph Rooding"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -47,7 +47,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "rubius #{version}"
+  rdoc.title = "Rubius #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
