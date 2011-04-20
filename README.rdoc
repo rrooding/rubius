@@ -5,6 +5,7 @@ Rubius provides a simple interface to RADIUS authentication
 == Requirements
 
 * Ruby >= 1.9.2 (not tested with previous versions)
+* Rails >= 3.0.6 (not tested with previous versions)
 
 Rubius works with the following RADIUS servers:
 
@@ -20,7 +21,7 @@ And then run bundler:
 
 	$ bundle install
 
-Install using rubygems
+Or install using rubygems
 
 	$ gem install rubius
 	
@@ -38,6 +39,11 @@ And then install the gem
 	$ rake install
 
 == Quick Start
+
+	$ cd /my/rails/app
+	$ rails generate rubius:install
+
+This will create an initial 'config/rubius.yml' configuration file and a 'config/radius-dictionary' RADIUS dictionary file, it will also create an initializer in 'config/initializers/rubius.rb' to load Rubius when your application starts up.
 
 == Contributing to Rubius
  
