@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ralph Rooding"]
-  s.date = %q{2011-04-19}
-  s.description = %q{A simply ruby RADIUS authentication gem}
+  s.date = %q{2011-04-20}
+  s.description = %q{Rubius provides a simple interface to RADIUS authentication}
   s.email = %q{ralph@izerion.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -32,38 +32,76 @@ Gem::Specification.new do |s|
     "lib/rubius/packet.rb",
     "lib/rubius/rails.rb",
     "lib/rubius/string.rb",
+    "rubius.gemspec",
     "test/helper.rb",
-    "test/test_rubius.rb"
+    "test/test_string.rb"
   ]
   s.homepage = %q{http://github.com/rahvin/rubius}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
-  s.summary = %q{A simply ruby RADIUS authentication gem}
+  s.summary = %q{A simple ruby RADIUS authentication gem}
   s.test_files = [
     "test/helper.rb",
-    "test/test_rubius.rb"
+    "test/test_dictionary.rb",
+    "test/test_string.rb"
   ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rubius>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<simplecov>, [">= 0.4.0"])
+      s.add_development_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
+      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<mocha>, ["~> 0.9.12"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<simplecov>, [">= 0.4.0"])
+      s.add_development_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
     else
+      s.add_dependency(%q<rubius>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<simplecov>, [">= 0.4.0"])
+      s.add_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
+      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<mocha>, ["~> 0.9.12"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<simplecov>, [">= 0.4.0"])
+      s.add_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
     end
   else
+    s.add_dependency(%q<rubius>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<simplecov>, [">= 0.4.0"])
+    s.add_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
+    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<mocha>, ["~> 0.9.12"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<simplecov>, [">= 0.4.0"])
+    s.add_dependency(%q<autotest-standalone>, ["~> 4.5.5"])
   end
 end
 

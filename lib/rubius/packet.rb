@@ -125,7 +125,7 @@ module Rubius
     end
     
     def set_vendor_attribute(vendor_id, attr_id, value)
-      attr_name = @dictionary.attribute_name(vendor_id, attr_id)
+      attr_name = @dictionary.attribute_name(attr_id, vendor_id)
       set_attribute(attr_name, value)
     end
     
