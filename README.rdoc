@@ -47,7 +47,9 @@ This will create an initial 'config/rubius.yml' configuration file and a 'config
 
 Now configure your RADIUS server properties in 'config/rubius.yml'. When you're done, you can authenticate with:
 
-	Rubius::Authenticator.authenticate('username', 'password')
+	if Rubius::Authenticator.authenticate('username', 'password')
+		# woohoo
+	end
 
 == Contributing to Rubius
  
