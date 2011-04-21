@@ -50,10 +50,19 @@ class TestDictionary < Test::Unit::TestCase
         assert !@dictionary.vendors.include?("NoId")
       end
       
-      should "handle broken ATTRIBUTE lines"
-      should "handle broken VALUE lines"
+      should "handle broken ATTRIBUTE lines" do
+        IO.stubs(:readlines).returns(RADIUS_DICTIONARY+DICT_BROKEN_ATTR)
+        
+        assert @dictionary.load("filename")
+        
+        assert_equal 'IBM-Attr-Included', @dictionary.attribute_name(5137, 123)
+        assert_nil @dictionary.attribute_name(5138, 123)
+        assert_equal 'IBM-Attr-Included2', @dictionary.attribute_name(5139, 123)
+      end
       
-      # spaces, tabs?
+      should "handle broken VALUE lines" do
+        
+      end
     end
   end
 end

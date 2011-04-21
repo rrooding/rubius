@@ -67,3 +67,14 @@ DICT_BROKEN_VENDOR = [
   "",
   "VENDOR NoId id"
 ]
+
+DICT_BROKEN_ATTR = [
+  "# broken attribute line:",
+  "VENDOR IBM 123",
+  "",
+  "ATTRIBUTE IBM-Attr-Included 5137 string",
+  "ATTRIBUTE IBM-Attr-NotIncluded 5138",
+  "ATTRIBUTE IBM-Attr-NotIncluded2 asdf integer",
+  "ATTRIBUTE IBM-Attr-Included2 5139 string",
+  ""
+]

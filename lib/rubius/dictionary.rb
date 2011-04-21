@@ -45,6 +45,7 @@ module Rubius
           @dictionary[vendor_id] ||= {:name => vendor_name}
         when ATTRIBUTE
           next if skip_until_next_vendor
+          next if tokens[1].nil? || tokens[2].to_i <= 0 || tokens[3].nil?
           @dictionary[vendor_id][tokens[2].to_i] = {:name => tokens[1].strip, :type => tokens[3].strip}
         when VALUE
           next if skip_until_next_vendor
