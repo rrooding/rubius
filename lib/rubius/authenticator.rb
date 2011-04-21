@@ -24,8 +24,10 @@ module Rubius
       @identifier = Process.pid && 0xff
     end
     
-    def init_from_config(config_file)
-      env = defined?(Rails) ? ::Rails.env : 'development'
+    def init_from_config(config_file, env=nil)
+      if env.nil?
+        env = defined?(::Rails) ? ::Rails.env : 'development'
+      end
       
       config = YAML.load_file(config_file)
       @host = config[env]["host"]
