@@ -78,3 +78,21 @@ DICT_BROKEN_ATTR = [
   "ATTRIBUTE IBM-Attr-Included2 5139 string",
   ""
 ]
+
+CONFIG_FILE = {
+  'development' => {
+    'host' => '127.0.0.1',
+    'port' => 1812,
+    'timeout' => 10,
+    'secret' => 'development-secret',
+    'dictionary' => 'radius-dictionary'
+  },
+  'production' => {
+    'host' => '10.1.0.254',
+    'port' => 1812,
+    'timeout' => 10,
+    'secret' => 'production-secret',
+    'dictionary' => 'radius-dictionary',
+    'nas_ip' => '10.1.0.1'
+  }
+}

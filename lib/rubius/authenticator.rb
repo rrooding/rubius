@@ -19,9 +19,7 @@ module Rubius
       
       @sock = nil
       
-      @nas_ip = UDPSocket.open {|s| s.connect(@host, 1); s.addr.last }
-      
-      @identifier = Process.pid && 0xff
+      @identifier = Process.pid & 0xff
     end
     
     def init_from_config(config_file, env=nil)
@@ -30,6 +28,8 @@ module Rubius
       end
       
       config = YAML.load_file(config_file)
+      raise Rubius::MissingEnvironmentConfiguration unless config.has_key?(env)
+      
       @host = config[env]["host"]
       @port = config[env]["port"] if config[env]["port"]
       @secret = config[env]["secret"]
@@ -40,8 +40,11 @@ module Rubius
       end
       
       @nas_ip = config[env]["nas_ip"] if config[env]["nas_ip"]
+      @nas_ip ||= UDPSocket.open {|s| s.connect(@host, 1); s.addr.last }
       
       setup_connection
+    rescue Errno::ENOENT
+      raise Rubius::MissingConfiguration
     end
     
     def authenticate(username, password)
