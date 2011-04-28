@@ -98,7 +98,7 @@ module Rubius
           val = unpack_attribute(vendor_attribute_value, type)
           set_vendor_attribute(vendor_id, vendor_attribute_id, val)
         else
-          type = @dictionary.attribute_type(Dictionary::DEFAULT_VENDOR, type_id)
+          type = @dictionary.attribute_type(type_id)
           raise "Attribute not found in dictionary (#{Dictionary::DEFAULT_VENDOR}/#{type_id})" if type.nil?
           
           val = unpack_attribute(value, type)
@@ -113,13 +113,15 @@ module Rubius
       
       @attributes.each_pair {|key, value|
         attr_num = @dictionary.attribute_id(key)
-        type = @dictionary.attribute_type(Dictionary::DEFAULT_VENDOR, attr_num)
+        type = @dictionary.attribute_type(attr_num)
         val = pack_attribute(value, type)
         next if val.nil?
         attr_string += [attr_num, val.length + 2, val].pack("CCa*")
       }
       
-      rcode = RESPONSES.reject{|k,v| v!=@code}.flatten.first
+      rejected_responses = RESPONSES.reject{|k,v| v!=@code}
+      rejected_responses = rejected_responses.to_a if RUBY_VERSION < "1.9.2"
+      rcode = rejected_responses.flatten.first
       
       return [rcode, @identifier, attr_string.length + HEADER_LENGTH, @authenticator, attr_string].pack(PACK_HEADER)
     end
