@@ -92,7 +92,7 @@ module Rubius
           vendor_attribute_value = value.unpack("xxxxxxa#{vendor_attribute_length-2}")[0]
           
           # look up the type of data so we know how to unpack it
-          type = @dictionary.attribute_type(vendor_id, vendor_attribute_id)
+          type = @dictionary.attribute_type(vendor_attribute_id, vendor_id)
           raise "VSA not found in dictionary (#{vendor_id}/#{vendor_attribute_id})" if type.nil?
           
           val = unpack_attribute(vendor_attribute_value, type)
