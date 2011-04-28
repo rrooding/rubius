@@ -73,7 +73,9 @@ module Rubius
     end
     
     def attribute_id(attr_name, vendor_id = DEFAULT_VENDOR)
-      @dictionary[vendor_id].reject{|k,v| !v.is_a?(Hash) || v[:name]!=attr_name}.flatten.first
+      vendor_object = @dictionary[vendor_id].reject{|k,v| !v.is_a?(Hash) || v[:name]!=attr_name}
+      vendor_object = vendor_object.to_a if RUBY_VERSION < "1.9.2"
+      vendor_object.flatten.first
     end
     
     private
